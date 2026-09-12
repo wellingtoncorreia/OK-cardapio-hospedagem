@@ -13,6 +13,7 @@ export default function Testemunho() {
       <h1 className="Testemunho-title">Veja esses depoimentos</h1>
 
       <Swiper
+        className="swiper-testemunhos" /* Classe adicionada aqui */
         modules={[Pagination, Autoplay]}
         spaceBetween={20}
         pagination={{ clickable: true }}
@@ -27,17 +28,14 @@ export default function Testemunho() {
       >
         {Testemunhos.map((t) => (
           <SwiperSlide key={t.id} className="Testemunho-slide">
-            {/* Estrelas dinâmicas */}
             <div className="stars">
               {Array.from({ length: t.rating }).map((_, index) => (
                 <Star key={index} className="star-icon" />
               ))}
             </div>
 
-            {/* Texto */}
             <p className="Testemunho-text">"{t.text}"</p>
 
-            {/* Autor */}
             <div className="Testemunho-author">
               <img src={t.avatar} alt={t.name} className="author-avatar" />
               <div>

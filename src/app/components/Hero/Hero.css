@@ -32,3 +32,9 @@
     text-align: center;
     color: white;
 }
+
+@media (min-width: 768px) {
+  .section-hero h1 {
+    width: 70vw; 
+  }
+}
