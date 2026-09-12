@@ -12,10 +12,10 @@ import 'swiper/css/navigation';
 export default function Galeria() {
   const [selectedDestino, setSelectedDestino] = useState(null);
 
-  const openModal = (destino) => setSelectedDestino(destino);
+  const openModal = (destino:any) => setSelectedDestino(destino);
   const closeModal = () => setSelectedDestino(null);
 
-  const getWhatsAppLink = (destino) => {
+  const getWhatsAppLink = (destino:any) => {
     const phone = "5511999999999"; // Substitua pelo seu número
     const message = `Olá! Gostaria de saber mais sobre o destino: ${destino.titulo}.`;
     return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
