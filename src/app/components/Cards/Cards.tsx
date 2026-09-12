@@ -15,11 +15,11 @@ export default function Card() {
     const [selectedCard, setSelectedCard] = useState(null);
 
     // Funções para abrir e fechar o modal
-    const openModal = (card) => setSelectedCard(card);
+    const openModal = (card:any) => setSelectedCard(card);
     const closeModal = () => setSelectedCard(null);
 
     // Função para gerar link do WhatsApp com mensagem automática
-    const getWhatsAppLink = (card) => {
+    const getWhatsAppLink = (card:any) => {
         const phone = "5511999999999"; // Substitua pelo seu número (DDI + DDD + Número)
         const message = `Olá! Tenho interesse no imóvel: ${card.title} localizado em ${card.location}.`;
         return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
