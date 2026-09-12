@@ -10,13 +10,13 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 export default function Galeria() {
-  const [selectedDestino, setSelectedDestino] = useState(null);
+  const [selectedDestino, setSelectedDestino] = useState<any>(null);
 
-  const openModal = (destino:any) => setSelectedDestino(destino);
+  const openModal = (destino: any) => setSelectedDestino(destino);
   const closeModal = () => setSelectedDestino(null);
 
-  const getWhatsAppLink = (destino:any) => {
-    const phone = "5511999999999"; // Substitua pelo seu número
+  const getWhatsAppLink = (destino: any) => {
+    const phone = "5511999999999"; 
     const message = `Olá! Gostaria de saber mais sobre o destino: ${destino.titulo}.`;
     return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
   };
@@ -26,7 +26,7 @@ export default function Galeria() {
       <h2>Escolha o seu destino</h2>
       
       <div className="container-galeria">
-        {destinos.map((destino, index) => (
+        {destinos.map((destino: any, index: number) => (
           <div 
             key={index} 
             className="galeria"
@@ -59,8 +59,8 @@ export default function Galeria() {
                   navigation 
                   style={{ width: '100%', height: '100%' }}
                 >
-                  {/* Usa a matriz 'galeria' se existir, ou cai de volta para a 'imagem' de capa */}
-                  {(selectedDestino.galeria || [selectedDestino.imagem]).map((img, i) => (
+                  {/* Forçado o uso de 'any' para evitar checagem estricta do TypeScript */}
+                  {(selectedDestino.galeria || [selectedDestino.imagem]).map((img: string, i: number) => (
                     <SwiperSlide key={i}>
                       <img src={img} alt={`${selectedDestino.titulo} - Imagem ${i + 1}`} className="modal-img" />
                     </SwiperSlide>
