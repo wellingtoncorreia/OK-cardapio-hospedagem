@@ -22,7 +22,7 @@ export default function Card() {
     };
 
     return (
-        <section className="container-card">
+        <section id="cards-secao" className="container-card">
             <Swiper
                 modules={[Pagination, Autoplay]}
                 spaceBetween={10}

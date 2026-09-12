@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <main>
       <Hero />
-      <Card />
+      <Card  />
       <PlanoViagem />
       <Testemunho />
       <Galeria />
